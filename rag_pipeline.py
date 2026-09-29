@@ -94,16 +94,20 @@ class DataFlowDoctorRAG:
         )
 
     def index(self, reset=False):
-        if reset:
-            try:
-                self.store.delete_collection()
-            except Exception:
-                pass
-            self.store = Chroma(
-                collection_name="dataflow-doctor-rag",
-                embedding_function=embeddings_model,
-                persist_directory=str(PERSIST_DIR),
-            )
+        """Rebuild the local collection from the bundled corpus.
+
+        The corpus is the source of truth. Rebuilding on every index call keeps
+        repeated ingestion idempotent and prevents UUID-based duplicate chunks.
+        """
+        try:
+            self.store.delete_collection()
+        except Exception:
+            pass
+        self.store = Chroma(
+            collection_name="dataflow-doctor-rag",
+            embedding_function=embeddings_model,
+            persist_directory=str(PERSIST_DIR),
+        )
         ids = [str(uuid4()) for _ in range(len(self.splits))]
         self.store.add_documents(self.splits, ids=ids)
         return len(self.splits)
