@@ -1,14 +1,16 @@
-# DataFlow Doctor - Data Pipeline & ETL Debugging RAG
+# DataFlow Doctor
 
-A complete local-first RAG portfolio project for **Kushagra Gupta**. The main notebook intentionally follows the instructor's Generative AI **Labs 1-6** structure while the project-specific layer adds a realistic data-engineering corpus, metadata filtering, evaluation and lineage impact analysis.
+DataFlow Doctor is a local tool for investigating failed data pipelines. It searches pipeline definitions, SQL, schemas, quality rules, logs, incident notes and runbooks, then returns a diagnosis with the supporting sources.
+
+The project was built around the instructor's Generative AI Labs 1-6, so the notebook and code keep that progression visible. The data and the debugging workflow are specific to data engineering rather than a generic document chatbot.
 
 ## Problem
 
 Data teams often spend time searching Airflow DAGs, logs, schemas, SQL transformations, quality rules, incident postmortems and runbooks before they can explain why a pipeline failed. DataFlow Doctor retrieves the most relevant evidence first and then generates a structured, source-backed diagnosis.
 
-## Bundled RAG dataset
+## Included data
 
-The ZIP includes everything needed for the demo. No external dataset download is required.
+The repository includes the complete demo corpus; no separate download is needed.
 
 - **41 RAG source files**
 - **26 labelled retrieval questions**
@@ -32,7 +34,7 @@ Main incident scenarios:
 5. Inventory parse failure from the wrong delimiter.
 6. Warehouse connection-pool exhaustion from leaked connections.
 
-## Sir's class-style RAG flow
+## Retrieval and answer flow
 
 `low-temperature LLM -> load -> split 1000/200 -> OllamaEmbeddings -> Chroma -> similarity/MMR/BM25+Chroma -> ChatPromptTemplate -> Pydantic -> LCEL -> MultiQuery -> LangGraph -> evaluation`
 
@@ -45,15 +47,15 @@ Main incident scenarios:
 - **Lab 5:** MMR + `MultiQueryRetriever`
 - **Lab 6:** `START -> retrieve -> generate -> END` using LangGraph
 
-## Local models
+## Models
 
-Default local setup:
+The default local setup uses:
 - Chat: `qwen3:8b`
 - Embeddings: `nomic-embed-text`
 
 Optional Groq generation is supported through `.env`.
 
-## Windows setup
+## Run on Windows
 
 ```powershell
 ollama pull qwen3:8b
@@ -101,10 +103,6 @@ python evaluate.py
 
 The script compares similarity, MMR and hybrid retrieval using **source hit**, **category hit** and **reciprocal rank**.
 
-## Why this is good for a resume
-
-It connects GenAI/RAG with actual data-engineering concepts: schemas, Airflow-style workflows, SQL transformations, data quality, incident debugging, metadata filtering and lineage. It is much more defensible than a generic PDF chatbot.
-
-## Important design note
+## Scope and limits
 
 DataFlow Doctor is decision support. It retrieves evidence and suggests safe diagnostic steps; it does not automatically modify production data, rerun pipelines or perform destructive backfills.
