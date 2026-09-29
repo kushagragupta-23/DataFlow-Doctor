@@ -1,0 +1,6 @@
+job: sessionize_events
+executor_memory: 4g
+executor_cores: 2
+shuffle_partitions: 200
+input: s3://lake/raw/events/
+output: analytics.fct_sessions

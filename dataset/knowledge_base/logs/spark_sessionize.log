@@ -1,0 +1,3 @@
+2026-07-16T11:05:02Z executor-7 WARN task partition=88 size=19.4GB
+2026-07-16T11:05:03Z executor-7 ERROR Container killed by YARN for exceeding memory limits
+2026-07-16T11:05:05Z INFO top_user_event_count=31004221 user_id=bot_992

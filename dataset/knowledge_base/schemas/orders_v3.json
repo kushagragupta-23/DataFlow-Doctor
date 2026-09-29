@@ -1,0 +1,12 @@
+{
+  "version": "v3",
+  "columns": {
+    "order_id": "string",
+    "customer_id": "string",
+    "order_ts": "timestamp",
+    "amount": "decimal(12,2)",
+    "currency": "string",
+    "status": "string",
+    "discount_code": "string"
+  }
+}

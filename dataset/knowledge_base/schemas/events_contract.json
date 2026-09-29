@@ -1,0 +1,17 @@
+{
+  "required": [
+    "event_id",
+    "user_id",
+    "event_name",
+    "event_time",
+    "session_hint"
+  ],
+  "event_time": "ISO-8601 UTC",
+  "allowed_event_names": [
+    "page_view",
+    "view_item",
+    "add_to_cart",
+    "begin_checkout",
+    "purchase"
+  ]
+}

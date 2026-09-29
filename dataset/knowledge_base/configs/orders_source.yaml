@@ -1,0 +1,6 @@
+source: ecommerce_mysql
+table: orders
+extract_mode: incremental
+watermark_column: updated_at
+watermark_timezone: UTC
+expected_schema_version: v3

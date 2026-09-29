@@ -1,0 +1,42 @@
+source_path,title,category,pipeline,incident_id
+docs/platform_architecture.md,Platform Architecture,docs,platform,
+docs/lineage_overview.md,Lineage Overview,docs,platform,
+docs/operating_principles.md,Operating Principles,docs,platform,
+dags/orders_pipeline.py,Orders Pipeline,dags,orders,
+dags/customers_pipeline.py,Customers Pipeline,dags,customers,
+dags/clickstream_pipeline.py,Clickstream Pipeline,dags,clickstream,
+dags/inventory_pipeline.py,Inventory Pipeline,dags,inventory,
+configs/orders_source.yaml,Orders Source,configs,orders,
+configs/airflow_connections.md,Airflow Connections,configs,platform,
+configs/spark_sessionize.yaml,Spark Sessionize,configs,clickstream,
+schemas/orders_v2.json,Orders V2,schemas,orders,
+schemas/orders_v3.json,Orders V3,schemas,orders,
+schemas/customers.json,Customers,schemas,customers,
+schemas/events_contract.json,Events Contract,schemas,platform,
+schemas/inventory.csv,Inventory,schemas,inventory,
+transformations/stg_orders.sql,Stg Orders,transformations,orders,
+transformations/fct_orders.sql,Fct Orders,transformations,orders,
+transformations/mart_daily_revenue.sql,Mart Daily Revenue,transformations,orders,
+transformations/customer_360.sql,Customer 360,transformations,customers,
+transformations/funnel_mart.sql,Funnel Mart,transformations,clickstream,
+runbooks/schema_drift.md,Schema Drift,runbooks,platform,
+runbooks/duplicate_records.md,Duplicate Records,runbooks,platform,
+runbooks/late_arriving_data.md,Late Arriving Data,runbooks,platform,
+runbooks/warehouse_connection.md,Warehouse Connection,runbooks,platform,
+runbooks/sftp_inventory.md,Sftp Inventory,runbooks,inventory,
+incidents/INC-2026-041-orders-schema-drift.md,Inc 2026 041 Orders Schema Drift,incidents,orders,INC-2026-041
+incidents/INC-2026-058-watermark-overlap.md,Inc 2026 058 Watermark Overlap,incidents,platform,INC-2026-058
+incidents/INC-2026-073-customer-null-keys.md,Inc 2026 073 Customer Null Keys,incidents,customers,INC-2026-073
+incidents/INC-2026-086-sessionize-oom.md,Inc 2026 086 Sessionize Oom,incidents,clickstream,INC-2026-086
+incidents/INC-2026-097-inventory-delimiter.md,Inc 2026 097 Inventory Delimiter,incidents,inventory,INC-2026-097
+incidents/INC-2026-104-warehouse-pool.md,Inc 2026 104 Warehouse Pool,incidents,platform,INC-2026-104
+logs/orders_schema_failure.log,Orders Schema Failure,logs,orders,
+logs/orders_duplicate_warning.log,Orders Duplicate Warning,logs,orders,
+logs/customer_quality.log,Customer Quality,logs,customers,
+logs/spark_sessionize.log,Spark Sessionize,logs,clickstream,
+logs/inventory_parse.log,Inventory Parse,logs,inventory,
+logs/warehouse_pool.log,Warehouse Pool,logs,platform,
+data_quality/orders_expectations.md,Orders Expectations,data_quality,orders,
+data_quality/customer_expectations.md,Customer Expectations,data_quality,customers,
+data_quality/clickstream_expectations.md,Clickstream Expectations,data_quality,clickstream,
+data_quality/revenue_reconciliation.md,Revenue Reconciliation,data_quality,orders,

@@ -1,0 +1,5 @@
+column,type,nullable
+sku,string,false
+warehouse_id,string,false
+on_hand,int,false
+updated_at,timestamp,false

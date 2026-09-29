@@ -1,0 +1,3 @@
+2026-09-14T03:00:12Z ERROR Timeout acquiring warehouse connection after 30s
+2026-09-14T03:00:12Z pool_size=20 active=20 idle=0
+2026-09-14T03:00:13Z recent_deployment=2026.09.14 operator=batch_enrichment

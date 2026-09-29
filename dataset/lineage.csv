@@ -1,0 +1,11 @@
+upstream_asset,downstream_asset,job
+raw.orders,analytics.stg_orders,orders_transform
+analytics.stg_orders,analytics.fct_orders,orders_transform
+analytics.fct_orders,analytics.mart_daily_revenue,daily_revenue_mart
+raw.customers,analytics.dim_customers,customer_transform
+analytics.dim_customers,analytics.customer_360,customer_360
+analytics.fct_orders,analytics.customer_360,customer_360
+raw.events,analytics.fct_sessions,sessionize_events
+analytics.fct_sessions,analytics.funnel_mart,funnel_mart
+analytics.fct_orders,analytics.funnel_mart,funnel_mart
+raw.inventory,analytics.inventory_snapshot,inventory_snapshot
