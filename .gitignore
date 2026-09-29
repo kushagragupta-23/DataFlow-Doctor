@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+chroma_dataflow_doctor_db/
+evaluation/retrieval_results.csv
+*.pyc
