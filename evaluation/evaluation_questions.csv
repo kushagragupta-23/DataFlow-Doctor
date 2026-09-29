@@ -1,0 +1,27 @@
+question_id,pipeline,question,expected_source,expected_category
+DF001,orders,The orders schema validation says discount_code is unexpected. What happened?,incidents/INC-2026-041-orders-schema-drift.md,incidents
+DF002,orders,Revenue suddenly increased and duplicate order IDs appeared. What should I check?,incidents/INC-2026-058-watermark-overlap.md,incidents
+DF003,orders,What is the safe remediation when the extraction watermark overlaps a previous window?,runbooks/duplicate_records.md,runbooks
+DF004,orders,Which tables are downstream of raw.orders?,docs/lineage_overview.md,docs
+DF005,orders,What columns are expected in orders schema v3?,schemas/orders_v3.json,schemas
+DF006,orders,How should daily revenue be reconciled to source totals?,data_quality/revenue_reconciliation.md,data_quality
+DF007,customers,Why did dim_customers fail its primary key test in June?,incidents/INC-2026-073-customer-null-keys.md,incidents
+DF008,customers,What is the primary key of the customers dataset?,schemas/customers.json,schemas
+DF009,customers,How should malformed CSV rows be handled?,data_quality/customer_expectations.md,data_quality
+DF010,clickstream,Why were Spark executors OOMKilled during the traffic spike?,incidents/INC-2026-086-sessionize-oom.md,incidents
+DF011,clickstream,What evidence in the logs points to partition skew?,logs/spark_sessionize.log,logs
+DF012,clickstream,How late can hourly clickstream data arrive before quarantine?,runbooks/late_arriving_data.md,runbooks
+DF013,clickstream,Which event names are allowed by the event contract?,schemas/events_contract.json,schemas
+DF014,clickstream,What should be excluded from product funnel metrics?,data_quality/clickstream_expectations.md,data_quality
+DF015,inventory,Why did inventory parsing see only one column?,incidents/INC-2026-097-inventory-delimiter.md,incidents
+DF016,inventory,What delimiter does the inventory contract require?,schemas/inventory.csv,schemas
+DF017,inventory,What should we do if vendor sends semicolon-delimited inventory data?,runbooks/sftp_inventory.md,runbooks
+DF018,platform,Why did warehouse tasks time out acquiring connections?,incidents/INC-2026-104-warehouse-pool.md,incidents
+DF019,platform,What is the configured warehouse connection pool maximum?,configs/airflow_connections.md,configs
+DF020,platform,What is the permanent fix for a connection leak?,runbooks/warehouse_connection.md,runbooks
+DF021,orders,What transform converts order timestamps to UTC?,transformations/stg_orders.sql,transformations
+DF022,orders,What statuses are excluded from fct_orders?,transformations/fct_orders.sql,transformations
+DF023,platform,What general diagnostic order should engineers follow before rerunning a pipeline?,docs/operating_principles.md,docs
+DF024,clickstream,What Spark configuration is currently set for shuffle partitions?,configs/spark_sessionize.yaml,configs
+DF025,orders,"If fct_orders is wrong, which business marts may be impacted?",docs/lineage_overview.md,docs
+DF026,platform,Should we delete production data as the first troubleshooting step?,docs/operating_principles.md,docs
